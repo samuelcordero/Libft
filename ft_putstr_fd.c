@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 16:07:28 by sacorder          #+#    #+#             */
-/*   Updated: 2023/03/07 16:35:39 by sacorder         ###   ########.fr       */
+/*   Created: 2023/03/07 17:06:30 by sacorder          #+#    #+#             */
+/*   Updated: 2023/03/07 17:08:29 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <unistd.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_putstr_fd(char *s, int fd)
 {
-	char	*res;
-	size_t	i;
+	int	i;
 
 	i = 0;
-	res = (void *) 0;
-	res = (char *) malloc(len);
-	if (res == (void *) 0)
-		return (res);
-	while (s[start] != '\0' && i < len)
+	while (s[i] != '\0')
 	{
-		res[i] == s[start];
+		write(fd, &s[i], 1);
 		++i;
-		++start;
 	}
-	return (res);
 }

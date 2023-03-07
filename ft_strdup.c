@@ -6,11 +6,12 @@
 /*   By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 15:53:03 by sacorder          #+#    #+#             */
-/*   Updated: 2023/03/07 16:11:53 by sacorder         ###   ########.fr       */
+/*   Updated: 2023/03/07 16:35:03 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <errno.h>
+#include <stdlib.h>
 
 char	*ft_strdup(const char *s1)
 {
