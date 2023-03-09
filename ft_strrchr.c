@@ -6,7 +6,7 @@
 /*   By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:22:27 by sacorder          #+#    #+#             */
-/*   Updated: 2023/03/09 14:47:29 by sacorder         ###   ########.fr       */
+/*   Updated: 2023/03/09 16:39:56 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strrchr(const char *s, int c)
 		++i;
 	}
 	if (last >= 0)
-		return ((char*) &s[last]);
+		return ((char *) &s[last]);
 	else if ((char) c == '\0')
 		return ((char *) &s[i]);
 	else

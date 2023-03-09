@@ -6,7 +6,7 @@
 /*   By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 13:27:00 by sacorder          #+#    #+#             */
-/*   Updated: 2023/03/09 14:56:01 by sacorder         ###   ########.fr       */
+/*   Updated: 2023/03/09 16:39:25 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static unsigned int	ft_count_words(char const *s, char c)
 	position = 0;
 	while (s[position] != '\0')
 	{
-		if(s[position] == c && position > 0)
+		if (s[position] == c && position > 0)
 			if (s[position - 1] != c)
 				++counter;
 		++position;
@@ -37,7 +37,7 @@ char	**ft_split(char const *s, char c)
 	char			**result;
 	unsigned int	word_nb;
 	unsigned int	position;
-	
+
 	word_nb = ft_count_words(s, c);
 	result = (char **) malloc(sizeof(char *) * (word_nb + 1));
 	position = 0;
