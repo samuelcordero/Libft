@@ -12,7 +12,17 @@
 
 #include <stdlib.h>
 
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	return ((void *) malloc(size * count));
+	void	*result;
+	size_t	counter;
+
+	counter = 0;
+	result = (void *) malloc(nmemb * size);
+	while (counter < nmemb * size)
+	{
+		((char *)result)[counter] = 0;
+		++counter;
+	}
+	return (result);
 }

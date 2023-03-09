@@ -30,13 +30,71 @@ static unsigned int	ft_count_words(char const *s, char c)
 	return (counter);
 }
 
-char	*ft_get_word_pos(char const *s, char c, unsigned int position);
+static size_t	ft_get_wordatpos_len(char const *s, char c, size_t position)
+{
+	size_t	result;
+	size_t	word_counter;
+	size_t	string_pos;
+
+	word_counter = 0;
+	string_pos = 0;
+	while (s[string_pos] != '\0' && word_counter <= position)
+	{
+		if (c == s[string_pos])
+		{
+			++word_counter;
+			while (c == s[string_pos])
+				++string_pos;
+		}
+		if (word_counter == position)
+		{
+			while (c != s[string_pos] && s[string_pos] != '\0')
+			{
+				++result;
+				++string_pos;
+			}
+		}
+		else
+			++string_pos;
+	}
+	return (result);
+}
+
+static char	*ft_get_word_pos(char const *s, char c, size_t position)
+{
+	char	*result;
+	size_t	word_counter;
+	size_t	string_pos;
+	size_t	result_pos;
+
+	word_counter = 0;
+	result_pos = 0;
+	result = (char *) malloc(sizeof(char) *(ft_get_wordatpos_len(s,
+					c, position) + 1));
+	if (!result)
+		return (result);
+	while (s[string_pos] != '\0' && word_counter <= position)
+	{
+		if (c == s[string_pos])
+		{
+			++word_counter;
+			while (c == s[string_pos])
+				++string_pos;
+		}
+		if (word_counter == position)
+			while (c != s[string_pos] && s[string_pos] != '\0')
+				result[result_pos++] = s[string_pos++];
+		else
+			++string_pos;
+	}
+	return (result);
+}
 
 char	**ft_split(char const *s, char c)
 {
-	char			**result;
-	unsigned int	word_nb;
-	unsigned int	position;
+	char	**result;
+	size_t	word_nb;
+	size_t	position;
 
 	word_nb = ft_count_words(s, c);
 	result = (char **) malloc(sizeof(char *) * (word_nb + 1));

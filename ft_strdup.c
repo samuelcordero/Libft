@@ -22,7 +22,7 @@ char	*ft_strdup(const char *s1)
 	res = (void *) 0;
 	while (s1[i] != '\0')
 		++i;
-	res = (char *)malloc(i);
+	res = (char *)malloc(i + 1);
 	if (res == (void *) 0)
 	{
 		errno = ENOENT;
