@@ -6,13 +6,14 @@
 /*   By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 12:28:01 by sacorder          #+#    #+#             */
-/*   Updated: 2023/03/07 12:30:30 by sacorder         ###   ########.fr       */
+/*   Updated: 2023/03/09 15:00:17 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stddef.h>
 
-void	*memcpy(void *dst, const void *src, sze_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)

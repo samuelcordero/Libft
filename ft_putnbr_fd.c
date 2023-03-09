@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 13:22:27 by sacorder          #+#    #+#             */
-/*   Updated: 2023/03/09 14:47:29 by sacorder         ###   ########.fr       */
+/*   Created: 2023/03/09 13:22:01 by sacorder          #+#    #+#             */
+/*   Updated: 2023/03/09 14:08:48 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
-{
-	int	i;
-	int	last;
+#include <unistd.h>
+#include <stdlib.h>
+#include "libft.h"
 
-	i = 0;
-	last = -1;
-	while (s[i] != '\0')
-	{
-		if (s[i] == (char) c)
-			last = i;
-		++i;
-	}
-	if (last >= 0)
-		return ((char*) &s[last]);
-	else if ((char) c == '\0')
-		return ((char *) &s[i]);
-	else
-		return ((void *) 0);
+void	ft_putnbr_fd(int n, int fd)
+{
+	char	*to_print;
+
+	to_print = ft_itoa(n);
+	ft_putstr_fd(to_print, fd);
+	free(to_print);
 }

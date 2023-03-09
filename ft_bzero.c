@@ -6,17 +6,18 @@
 /*   By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 12:23:12 by sacorder          #+#    #+#             */
-/*   Updated: 2023/03/07 12:27:27 by sacorder         ###   ########.fr       */
+/*   Updated: 2023/03/09 15:03:39 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stddef.h>
 
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	if (s == (void *) 0)
-		return ();
+		return ;
 	while (i < n)
 	{
 		s[i] = (unsigned char) 0;

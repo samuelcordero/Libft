@@ -6,9 +6,10 @@
 /*   By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:31:57 by sacorder          #+#    #+#             */
-/*   Updated: 2023/03/07 13:35:41 by sacorder         ###   ########.fr       */
+/*   Updated: 2023/03/09 14:49:25 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stddef.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

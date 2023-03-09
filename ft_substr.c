@@ -6,7 +6,7 @@
 /*   By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:07:28 by sacorder          #+#    #+#             */
-/*   Updated: 2023/03/07 16:35:39 by sacorder         ###   ########.fr       */
+/*   Updated: 2023/03/09 14:45:39 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (res);
 	while (s[start] != '\0' && i < len)
 	{
-		res[i] == s[start];
+		res[i] = s[start];
 		++i;
 		++start;
 	}

@@ -6,9 +6,10 @@
 /*   By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:36:14 by sacorder          #+#    #+#             */
-/*   Updated: 2023/03/07 13:41:34 by sacorder         ###   ########.fr       */
+/*   Updated: 2023/03/09 15:02:45 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stddef.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

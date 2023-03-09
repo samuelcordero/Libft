@@ -6,13 +6,14 @@
 /*   By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 12:07:25 by sacorder          #+#    #+#             */
-/*   Updated: 2023/03/07 12:26:41 by sacorder         ###   ########.fr       */
+/*   Updated: 2023/03/09 15:00:39 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stddef.h>
 
-void	*memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	if (b == (void *) 0)

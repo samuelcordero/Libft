@@ -6,9 +6,10 @@
 /*   By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 12:35:24 by sacorder          #+#    #+#             */
-/*   Updated: 2023/03/07 12:43:07 by sacorder         ###   ########.fr       */
+/*   Updated: 2023/03/09 14:50:32 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stddef.h>
 
 size_t	strlcpy(char *dst, const char *src, size_t dstsize)
 {

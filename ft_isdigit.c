@@ -6,13 +6,13 @@
 /*   By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 11:30:59 by sacorder          #+#    #+#             */
-/*   Updated: 2023/03/07 12:12:47 by sacorder         ###   ########.fr       */
+/*   Updated: 2023/03/09 14:12:26 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
 {
-	if (c < 48 || c > 57)
-		return (0);
-	return (c);
+	if (c >= '0' && c <= '9')
+		return(c);
+	return (0);
 }

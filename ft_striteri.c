@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 13:22:27 by sacorder          #+#    #+#             */
-/*   Updated: 2023/03/09 14:47:29 by sacorder         ###   ########.fr       */
+/*   Created: 2023/03/09 13:03:12 by sacorder          #+#    #+#             */
+/*   Updated: 2023/03/09 13:05:28 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int	i;
-	int	last;
+	unsigned int	position;
 
-	i = 0;
-	last = -1;
-	while (s[i] != '\0')
+	position = 0;
+	while (s[position] != '\0')
 	{
-		if (s[i] == (char) c)
-			last = i;
-		++i;
+		(*f)(position, &s[position]);
+		++position;
 	}
-	if (last >= 0)
-		return ((char*) &s[last]);
-	else if ((char) c == '\0')
-		return ((char *) &s[i]);
-	else
-		return ((void *) 0);
 }
