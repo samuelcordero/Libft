@@ -6,7 +6,7 @@
 /*   By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 12:31:21 by sacorder          #+#    #+#             */
-/*   Updated: 2023/03/09 16:38:36 by sacorder         ###   ########.fr       */
+/*   Updated: 2023/03/10 13:26:54 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stddef.h>
@@ -15,6 +15,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;
 
+	if (!dst && !src)
+		return (dst);
 	if ((const char *) src >= (const char *) dst)
 	{
 		i = 0;

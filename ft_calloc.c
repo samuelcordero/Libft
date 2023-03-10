@@ -6,7 +6,7 @@
 /*   By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 15:47:55 by sacorder          #+#    #+#             */
-/*   Updated: 2023/03/07 16:03:08 by sacorder         ###   ########.fr       */
+/*   Updated: 2023/03/10 13:44:47 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	counter = 0;
 	result = (void *) malloc(nmemb * size);
+	if (!result)
+		return (0);
 	while (counter < nmemb * size)
 	{
 		((char *)result)[counter] = 0;
