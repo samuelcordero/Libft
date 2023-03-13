@@ -6,7 +6,7 @@
 #    By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/20 18:04:20 by sacorder          #+#    #+#              #
-#    Updated: 2023/03/13 11:43:02 by sacorder         ###   ########.fr        #
+#    Updated: 2023/03/13 13:48:12 by sacorder         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 CC = gcc
@@ -28,8 +28,4 @@ fclean: clean
 	$(RM) $(NAME)
 	$(RM) $(BONUSNAME)
 re: fclean all
-bonus :$(BONUSNAME)
-$(BONUSNAME) :$(BONUSSRC)
-	$(CC) $(FLAGS) -c $(BONUSSRC)
-	ar -rc $(BONUSNAME) $(OBJ)
 .PHONY: all clean fclean re bonus

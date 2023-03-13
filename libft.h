@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   libft_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:02:19 by sacorder          #+#    #+#             */
-/*   Updated: 2023/03/13 11:43:43 by sacorder         ###   ########.fr       */
+/*   Updated: 2023/03/13 13:31:23 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
 # define LIBFT_H
 
 # include <stddef.h>
+
+typedef struct s_list
+{
+	void		*context;
+	struct s_list	*next;
+}		t_list;
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
@@ -48,4 +54,13 @@ int		ft_isdigit(int c);
 int		ft_isascii(int c);
 int		ft_isalpha(int c);
 int		ft_isalnum(int c);
+void    ft_lstadd_back(t_list **ilst, t_list *new);
+void    ft_lstadd_front(t_list **lst, t_list *new);
+void    ft_lstclear(t_list **lst, void (*del)(void *));
+void    ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+t_list	*ft_lstlast(t_list *lst);
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list	*ft_lstnew(void *content);
+int	ft_lstsize(t_list *lst);
 #endif
