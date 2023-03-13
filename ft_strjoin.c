@@ -6,7 +6,7 @@
 /*   By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:28:54 by sacorder          #+#    #+#             */
-/*   Updated: 2023/03/09 14:54:48 by sacorder         ###   ########.fr       */
+/*   Updated: 2023/03/13 17:22:52 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -21,7 +21,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	s1len = ft_strlen(s1);
 	s2len = ft_strlen(s2);
-	res = (char *) malloc(sizeof(char) * (s1len + s2len));
+	res = (char *) malloc(sizeof(char) * (s1len + s2len + 1));
 	if (res == (void *) 0)
 		return (res);
 	pos = 0;
