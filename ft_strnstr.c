@@ -6,7 +6,7 @@
 /*   By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:47:10 by sacorder          #+#    #+#             */
-/*   Updated: 2023/03/10 14:41:51 by sacorder         ###   ########.fr       */
+/*   Updated: 2023/03/14 14:42:41 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stddef.h>
@@ -21,8 +21,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	i = 0;
 	if (!needle[0])
 		return ((char *) haystack);
-	else if (!haystack[0])
-		return (0);
 	while (haystack[i] != '\0' && i < len)
 	{
 		if (haystack[i] == needle[0])
