@@ -6,7 +6,7 @@
 /*   By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 13:27:00 by sacorder          #+#    #+#             */
-/*   Updated: 2023/03/14 15:06:44 by sacorder         ###   ########.fr       */
+/*   Updated: 2023/03/15 17:00:09 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ static size_t	ft_get_wordatpos_len(char const *s, char c, size_t position)
 				++string_pos;
 			}
 		}
+		while (c != s[string_pos] && s[string_pos] != '\0')
+			++string_pos;
 		while (c == s[string_pos])
 			++string_pos;
 		++word_counter;
@@ -85,6 +87,8 @@ static char	*ft_get_word_pos(char const *s, char c, size_t position)
 		if (word_counter == position)
 			while (c != s[string_pos] && s[string_pos] != '\0')
 				result[result_pos++] = s[string_pos++];
+		while (c != s[string_pos] && s[string_pos] != '\0')
+			++string_pos;
 		while (c == s[string_pos])
 			++string_pos;
 		++word_counter;
@@ -99,6 +103,8 @@ char	**ft_split(char const *s, char c)
 	size_t	word_nb;
 	size_t	position;
 
+	if (!c)
+		return (0);
 	word_nb = ft_count_words(s, c);
 	result = (char **) malloc(sizeof(char *) * (word_nb + 1));
 	position = 0;

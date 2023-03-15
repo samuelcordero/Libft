@@ -6,7 +6,7 @@
 /*   By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 13:22:01 by sacorder          #+#    #+#             */
-/*   Updated: 2023/03/14 16:07:25 by sacorder         ###   ########.fr       */
+/*   Updated: 2023/03/15 16:12:03 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,19 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*to_print;
-
-	if (fd >= 0)
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	else if (n < 0)
 	{
-		to_print = ft_itoa(n);
-		if (to_print)
-		{
-			ft_putstr_fd(to_print, fd);
-			free(to_print);
-		}
-	}	
+		n *= -1;
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(n, fd);
+	}
+	else if (n / 10 == 0)
+		ft_putchar_fd(n + '0', fd);
+	else
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd((n % 10) + '0', fd);
+	}
 }

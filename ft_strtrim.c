@@ -6,14 +6,14 @@
 /*   By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 17:09:04 by sacorder          #+#    #+#             */
-/*   Updated: 2023/03/14 18:19:47 by sacorder         ###   ########.fr       */
+/*   Updated: 2023/03/15 17:03:03 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
+/*
 #include <unistd.h>
-//#include "libft.h"
-
 size_t	ft_strlen(const char *str)
 {
 	size_t	i;
@@ -75,7 +75,7 @@ void	ft_putstr_fd(char *s, int fd)
 		write(fd, &s[i], 1);
 		++i;
 	}
-}
+}*/
 
 static unsigned int	ft_isset(char const c, char const *set)
 {
@@ -115,13 +115,18 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*res;
 
-	if (ft_startpos(s1, set) > ft_endpos(s1, set))
+	if (!s1)
 	{
 		res = (char *) malloc(sizeof(char) * 1);
 		res[0] = '\0';
+		return (res);
 	}
-	else if (!s1)
-		return (0);
+	else if (ft_startpos(s1, set) >= ft_endpos(s1, set))
+	{
+		res = (char *) malloc(sizeof(char) * 1);
+		res[0] = '\0';
+		return (res);
+	}
 	else
 		res = (char *) malloc(sizeof(char) * (ft_endpos(s1, set) - ft_startpos(s1, set)));
 	if (!res)
@@ -129,9 +134,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	res = ft_substr(s1, (unsigned int) ft_startpos(s1, set), ft_endpos(s1, set) - ft_startpos(s1, set) + 1);
 	return (res);
 }
-
+/*
 int	main(int argc, char **argv)
 {
-	ft_putstr_fd(ft_strtrim(argv[1], argv[2]), 1);
+	char *res;
+	res = ft_strtrim(argv[1], argv[2]);
+	if (res)
+		ft_putstr_fd(res, 1);
+	write(1, "\n", 1);
 	return (0);
-}
+}*/
