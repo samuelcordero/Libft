@@ -6,12 +6,12 @@
 /*   By: sacorder <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 11:36:01 by sacorder          #+#    #+#             */
-/*   Updated: 2023/03/14 16:00:35 by sacorder         ###   ########.fr       */
+/*   Updated: 2023/03/15 19:01:00 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft_bonus.h"
+#include "libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {

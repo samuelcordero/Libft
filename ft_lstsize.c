@@ -6,11 +6,11 @@
 /*   By: sacorder <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 11:14:00 by sacorder          #+#    #+#             */
-/*   Updated: 2023/03/14 16:00:56 by sacorder         ###   ########.fr       */
+/*   Updated: 2023/03/15 19:01:19 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 int	ft_lstsize(t_list *lst)
 {
