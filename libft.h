@@ -6,7 +6,7 @@
 /*   By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:02:19 by sacorder          #+#    #+#             */
-/*   Updated: 2023/03/15 19:01:55 by sacorder         ###   ########.fr       */
+/*   Updated: 2023/03/16 15:14:05 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -16,7 +16,7 @@
 
 typedef struct s_list
 {
-	void			*context;
+	void			*content;
 	struct s_list	*next;
 }		t_list;
 

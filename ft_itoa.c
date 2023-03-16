@@ -6,13 +6,13 @@
 /*   By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 13:07:12 by sacorder          #+#    #+#             */
-/*   Updated: 2023/03/10 16:16:12 by sacorder         ###   ########.fr       */
+/*   Updated: 2023/03/16 16:24:51 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-static unsigned int	ft_intsize(int n)
+static long	ft_intsize(int n)
 {
 	unsigned int	size;
 
@@ -25,11 +25,20 @@ static unsigned int	ft_intsize(int n)
 	return (size);
 }
 
+static long	ft_limit_putsign(long *ntmp, char *res)
+{
+	if (*ntmp >= 0)
+		return (0);
+	*ntmp *= -1;
+	res[0] = '-';
+	return (1);
+}
+
 char	*ft_itoa(int n)
 {
 	char	*result;
-	long	size;
-	long	limit;
+	size_t	size;
+	size_t	limit;
 	long	ntmp;
 
 	size = ft_intsize(n);
@@ -40,17 +49,13 @@ char	*ft_itoa(int n)
 	result = (char *) malloc(sizeof(char) * size + 1);
 	if (!result)
 		return (result);
-	if (ntmp < 0)
-	{
-		result[0] = '-';
-		ntmp *= -1;
-		limit = 1;
-	}
+	limit = ft_limit_putsign(&ntmp, result);
 	result[size] = '\0';
-	while (--size >= limit)
+	while (size > limit)
 	{
-		result[size] = (ntmp % 10) + '0';
+		result[size - 1] = (ntmp % 10) + '0';
 		ntmp /= 10;
+		--size;
 	}
 	return (result);
 }
