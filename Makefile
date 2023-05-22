@@ -29,7 +29,7 @@ bonus: $(OBJ) $(OBJBONUS) $(INCLUDE)
 	$(LIB) $(NAME) $(OBJBONUS) $(OBJ)
 
 %.o: %.c
-	$(CC) $(CCFLAGS) -c -o $@ $<
+	$(CC) $(FLAGS) -c -o $@ $<
 
 clean:
 	$(RM) $(OBJ)
@@ -41,3 +41,4 @@ fclean: clean
 re: fclean all
 
 rebonus: fclean bonus
+.PHONY: all bonus clean fclean re rebonus
