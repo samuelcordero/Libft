@@ -3,13 +3,13 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+         #
+#    By: sacorder <sacorder@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/20 18:04:20 by sacorder          #+#    #+#              #
-#    Updated: 2023/03/16 18:09:11 by sacorder         ###   ########.fr        #
+#    Updated: 2024/10/10 20:34:01 by sacorder         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-CC = gcc
+
 LIB = ar -rc
 NAME = libft.a
 FLAGS = -Wall -Wextra -Werror
@@ -38,7 +38,9 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-re: fclean all
+re:: fclean
+re:: all
 
-rebonus: fclean bonus
+rebonus:: fclean
+rebonus:: bonus
 .PHONY: all bonus clean fclean re rebonus
